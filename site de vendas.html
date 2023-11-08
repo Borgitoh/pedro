@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .produto {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            width: 30%;
+        }
+
+        .preco {
+            font-weight: bold;
+        }
+
+        .comprar {
+            background-color: #f37262;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .comprar:hover {
+            background-color: #d54c37;
+        }
+
+        .carrinho {
+            background-color: #444;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .carrinho h2 {
+            text-align: center;
+        }
+
+        .carrinho .produto-carrinho {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin: 10px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Minha Loja Online</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Produtos</a></li>
+            <li><a href="#">Carrinho</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="produto">
+            <img src="produto1.jpg" alt="Produto 1">
+            <h2>Produto 1</h2>
+            <p>Descrição do Produto 1.</p>
+            <p class="preco">R$ 100,00</p>
+            <button class="comprar">Adicionar ao Carrinho</button>
+        </div>
+        <div class="produto">
+            <img src="produto2.jpg" alt="Produto 2">
+            <h2>Produto 2</h2>
+            <p>Descrição do Produto 2.</p>
+            <p class="preco">R$ 150,00</p>
+            <button class="comprar">Adicionar ao Carrinho</button>
+        </div>
+        <div class="produto">
+            <img src="produto3.jpg" alt="Produto 3">
+            <h2>Produto 3</h2>
+            <p>Descrição do Produto 3.</p>
+            <p class="preco">R$ 80,00</p>
+            <button class="comprar">Adicionar ao Carrinho</button>
+        </div>
+    </main>
+    <div class="carrinho">
+        <h2>Carrinho de Compras</h2>
+        <div class="produto-carrinho">
+            <span>Produto 1</span>
+            <span>R$ 100,00</span>
+        </div>
+        <div class="produto-carrinho">
+            <span>Produto 2</span>
+            <span>R$ 150,00</span>
+        </div>
+        <div class="produto-carrinho">
+            <span>Produto 3</span>
+            <span>R$ 80,00</span>
+        </div>
+        <p>Total: R$ 330,00</p>
+    </div>
+    <footer>
+        <p>&copy; 2023 Minha Loja Online</p>
+    </footer>
+</body>
+</html>
+

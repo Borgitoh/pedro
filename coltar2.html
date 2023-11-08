@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Consulta de Notas Escolares</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #135492;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #135492;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0d3b66;
+        }
+
+        #notasForm {
+            display: none; /* Inicialmente oculto */
+        }
+
+        #notasTable {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        #notasTable, #notasTable th, #notasTable td {
+            border: 1px solid #ccc;
+        }
+
+        #notasTable th, #notasTable td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        #notasTable th {
+            background-color: #135492;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Consulta de Notas Escolares IMAG-V</h1>
+    </header>
+    <main>
+        <section class="container">
+            <form id="consultaForm" action="consultar_notas.php" method="post">
+                <label for="Número_de_estudante">Número de estudante:</label>
+                <input type="text" name="Número_de_estudante" id="Número_de_estudante" required>
+                <br>
+                <label for="Nome_De_Estudante">Nome De Estudante</label>
+                <input type="text" name="Nome_De_Estudante" id="Nome_De_Estudante" required>
+                <br>
+                <button type="button" id="consultarNotasBtn">Consultar Notas</button>
+            </form>
+
+            <form id="notasForm">
+                <table id="notasTable">
+                    <tr>
+                        <th>Disciplina</th>
+                        <th>Nota</th>
+                    </tr>
+                    <tr>
+                        <td>Português</td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td>Inglês</td>
+                        <td>16</td>
+                    </tr>
+                    <tr>
+                        <td>Matemática</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>T.I.C</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>T.L.P</td>
+                        <td>17</td>
+                    </tr>
+                    <tr>
+                        <td>O.A.E</td>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <td>B.D</td>
+                        <td>19</td>
+                    </tr>
+                    <tr>
+                        <td>I.A.G</td>
+                        <td>13</td>
+                    </tr>
+                    <tr>
+                        <td>S.I</td>
+                        <td>20</td>
+                    </tr>
+                    <!-- Inclua as notas aqui -->
+                </table>
+                
+                <button id="baixarNotasBtn">GERAR PDF</button>
+            </form>
+        </section>
+    </main>
+
+    
+    <script>
+        
+        document.getElementById("consultarNotasBtn").addEventListener("click", function() {
+            // Aqui você pode adicionar a lógica para consultar as notas com base no ID do estudante
+            // Por enquanto, vamos apenas alternar a visibilidade dos formulários
+            document.getElementById("consultaForm").style.display = "none";
+            document.getElementById("notasForm").style.display = "block";
+        });
+
+    </script>
+    
+    <script>
+
+        const btnGenerate = document.getElementById("baixarNotasBtn")
+
+        btnGenerate.addEventListener("click", (evt) =>{
+            window.print()
+
+
+        });
+
+
+    </script>
+</body>
+</html>

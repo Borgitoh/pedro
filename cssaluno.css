@@ -1,0 +1,90 @@
+/* Estilo para o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para o contêiner principal */
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Estilo para o menu à esquerda *//* Estilo para o menu à esquerda */
+.menu {
+    background-color: lightskyblue;
+    color: #fff;
+    width: 200px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column; /* Altera a direção dos itens para empilhá-los verticalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    margin: 50px 0; /* Adiciona espaço entre os itens do menu */
+}
+
+.menu a {
+    text-decoration: none;
+    color: white; /* Cor das letras do Menu */
+}
+
+/* Estilo para o logotipo */
+.logo {
+    width: 100px; /* Largura do logotipo */
+    height: 100px; /* Altura do logotipo */
+    margin: -250px 0 10px 0; /* Espaço acima e abaixo do logotipo */
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Garante que a imagem do logotipo se encaixe dentro do div */
+}
+
+
+/* Estilo para a divisão entre os lados esquerdo e direito */
+.divisao {
+    width: 10px; /* Largura da divisão */
+    background-color: #ccc; /* Cor da borda de sombreamento */
+    margin: 2px; /* Espaço entre a borda e os elementos */
+}
+
+
+/* Estilo para o conteúdo à direita */
+.content {
+    flex: 1;
+    padding: 30px;
+}
+
+/* Estilo para as seções de conteúdo */
+.content > div {
+    display: none;
+}
+
+/* Estilo para a seção ativa */
+.content > div.active {
+    display: block;
+}
+
+#dados-academicos {
+    margin: 20px; /* Adiciona uma margem ao redor de toda a seção */
+}
+
+table {
+    width: 100%; /* Expande a tabela para preencher a largura da seção */
+    margin-top: 20px; /* Adiciona uma margem superior à tabela */
+}
+
+td {
+    padding: 10px 20px; /* Adiciona preenchimento interno nas células da tabela */
+}

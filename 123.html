@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lançamento de Notas Escolares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #135492;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .form-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .form-container input {
+            padding: 10px;
+            margin: 5px;
+        }
+
+        .form-container button {
+            padding: 10px 20px;
+            background-color: #135492;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #0d3b66;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lançamento de Notas Escolares</h1>
+        <div class="form-container" id="login-form">
+            <h2>Login do Professor</h2>
+            <input type="text" id="professor" placeholder="Nome de Usuário" required>
+            <input type="password" id="senha" placeholder="Senha" required>
+            <button id="login-button">Entrar</button>
+        </div>
+        <div class="form-container" id="grades-form" style="display: none;">
+            <h2>Lançar Nova Nota</h2>
+            <input type="text" id="aluno" placeholder="Aluno">
+            <!DOCTYPE html>
+<html>
+<head>
+    <title>Lançamento de Notas Escolares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #135492;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .form-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .form-container input {
+            padding: 10px;
+            margin: 5px;
+        }
+
+        .form-container button {
+            padding: 10px 20px;
+            background-color: #135492;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #0d3b66;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lançamento de Notas Escolares</h1>
+        <div class="form-container" id="login-form">
+            <h2>Login do Professor</h2>
+            <input type="text" id="professor" placeholder="Nome de Usuário" required>
+            <input type="password" id="senha" placeholder="Senha" required>
+            <button id="login-button">Entrar</button>
+        </div>
+        <div class="form-container" id="grades-form" style="display: none;">
+            <h2>Lançar Nova Nota</h2>
+            <input type="text" id="aluno" placeholder="Aluno">
+            <select id="disciplina">
+                <form action="salvar_notas.php" method="post">
+                    <label for="aluno">Aluno:</label>
+                    <input type="text" name="aluno" placeholder="Nome do Aluno" required>
+                    
+                    <label for="disciplina">Disciplina:</label>
+                    <select name="disciplina">
+                        <option value="Matemática">Matemática</option>
+                        <option value="Português">Português</option>
+                        <option value="O.A.E">O.A.E</option>
+                        <option value="I.A.G">I.A.G</option>
+                        <!-- Adicione mais disciplinas aqui -->
+                    </select>
+                    
+                    <label for="senha-disciplina">Senha da Disciplina:</label>
+                    <input type="password" name="senha-disciplina" placeholder="Senha da Disciplina" required>
+                    
+                    <label for="nota">Nota:</label>
+                    <input type="text" name="nota" placeholder="Nota" required>
+                
+                    <input type="submit" value="Lançar Nota">
+                </form>
+                     
+    </div>
+
+    <script>
+        var disciplinaSenhas = {
+            'Matemática': 'senha1',
+            'Português': 'Port1',
+            'OAE': 'O.A.E1',
+            'IAG': 'I.A.G1',
+            'P.T':'P.T1',
+            'Inglês':'I.N.G1',
+            'T.I.C': 'T.I.C1',
+            'B.D':'B.D1',
+            'S.I':'S.I1'
+            // Mapeie mais disciplinas para suas senhas aqui
+        };
+
+        var professorLogado = '';
+
+        var loginForm = document.getElementById("login-form");
+        var gradesForm = document.getElementById("grades-form");
+        var notasTable = document.getElementById("notas-table");
+
+        document.getElementById("login-button").addEventListener("click", function() {
+            var professor = document.getElementById("professor").value;
+            var senha = document.getElementById("senha").value;
+
+            // Simulando autenticação (usuário: professor, senha: senha)
+            if (professor == 'Anderson' && senha == 'chefe') {
+                professorLogado = professor;
+                loginForm.style.display = "none";
+                gradesForm.style.display = "block";
+                notasTable.style.display = "block";
+            } else {
+                alert("Credenciais incorretas. Tente novamente.");
+            }
+        });
+
+        document.getElementById("lançar-nota-button").addEventListener("click", function() {
+            var aluno = document.getElementById("aluno").value;
+            var disciplina = document.getElementById("disciplina").value;
+            var senhaDisciplina = document.getElementById("senha-disciplina").value;
+            var nota = document.getElementById("nota").value;
+
+            if (professorLogado == disciplina) {
+                alert("Você não tem permissão para lançar notas nesta disciplina.");
+                return;
+            }
+
+            if (senhaDisciplina == disciplinaSenhas[disciplina]) {
+                alert("Senha da disciplina incorreta. Tente novamente.");
+                return;
+            }
+
+            // Aqui você pode adicionar a lógica para salvar a nota no servidor
+            alert("Nota lançada para " + aluno + " em " + disciplina + ": " + nota);
+        });
+    </script>
+</body>
+</html>
+
+    </div>
+
+    <script>
+        var disciplinaSenhas = {
+            'Matemática': 'senha1',
+            'Português': 'Port1',
+            'OAE': 'O.A.E1',
+            'IAG': 'I.A.G1',
+            'P.T':'P.T1',
+            'Inglês':'I.N.G1',
+            'T.I.C': 'T.I.C1',
+            'B.D':'B.D1',
+            'S.I':'S.I1'
+            // Mapeie mais disciplinas para suas senhas aqui
+        };
+
+        var professorLogado = '';
+
+        var loginForm = document.getElementById("login-form");
+        var gradesForm = document.getElementById("grades-form");
+        var notasTable = document.getElementById("notas-table");
+
+        document.getElementById("login-button").addEventListener("click", function() {
+            var professor = document.getElementById("professor").value;
+            var senha = document.getElementById("senha").value;
+
+            // Simulando autenticação (usuário: professor, senha: senha)
+            if (professor == 'Anderson' && senha == 'chefe') {
+                professorLogado = professor;
+                loginForm.style.display = "none";
+                gradesForm.style.display = "block";
+                notasTable.style.display = "block";
+            } else {
+                alert("Credenciais incorretas. Tente novamente.");
+            }
+        });
+
+        document.getElementById("lançar-nota-button").addEventListener("click", function() {
+            var aluno = document.getElementById("aluno").value;
+            var disciplina = document.getElementById("disciplina").value;
+            var senhaDisciplina = document.getElementById("senha-disciplina").value;
+            var nota = document.getElementById("nota").value;
+
+            if (professorLogado == disciplina) {
+                alert("Você não tem permissão para lançar notas nesta disciplina.");
+                return;
+            }
+
+            if (senhaDisciplina == disciplinaSenhas[disciplina]) {
+                alert("Senha da disciplina incorreta. Tente novamente.");
+                return;
+            }
+
+            // Aqui você pode adicionar a lógica para salvar a nota no servidor
+            alert("Nota lançada para " + aluno + " em " + disciplina + ": " + nota);
+        });
+    </script>
+</body>
+</html>
